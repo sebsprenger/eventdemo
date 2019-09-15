@@ -1,4 +1,4 @@
-package demo
+package eventdemo
 
 import (
 	"log"
@@ -31,7 +31,7 @@ func (d Dispatcher) Dispatch(messages chan Message) {
 			continue
 		}
 		d.waitGroup.Add(1)
-		go handler.HandleMessage(message, d.waitGroup)
+		handler.HandleMessage(message, d.waitGroup)
 	}
 
 	d.waitGroup.Done()

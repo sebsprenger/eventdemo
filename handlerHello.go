@@ -1,4 +1,4 @@
-package demo
+package eventdemo
 
 import (
 	"fmt"

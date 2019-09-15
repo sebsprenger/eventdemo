@@ -22,9 +22,9 @@ func main() {
 
 	waitGroup.Add(3)
 
-	go generator.GenerateMessages(messageChannel)
-	go filter.Filter(messageChannel, filteredChannel, demo.Hello, demo.Ping, demo.Goodbye)
-	go dispatcher.Dispatch(filteredChannel)
+	generator.GenerateMessages(messageChannel)
+	filter.Filter(messageChannel, filteredChannel, demo.Hello, demo.Ping, demo.Goodbye)
+	dispatcher.Dispatch(filteredChannel)
 
 	waitGroup.Wait()
 }
