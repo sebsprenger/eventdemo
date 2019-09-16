@@ -22,6 +22,7 @@ func (f Filter) Filter(input chan Message, output chan Message, msgTypes ...Mess
 		for _, msgType := range msgTypes {
 			if message.Type == msgType {
 				output <- message
+				continue
 			}
 		}
 	}
